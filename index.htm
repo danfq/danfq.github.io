@@ -4,6 +4,55 @@
 
     <title>Stay Focused</title>
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
 </head>
+
+<body>
+
+    <!-- Audio -->
+    <audio id="audio" loop>
+        <source src="audio/loop.mp3" type="audio/mpeg">
+    </audio>
+
+    <h1>Stay Focused</h1>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="https://play.google.com/store/apps/details?id=com.qoding.iamokay" target="_blank">Our App</a>
+        <a href="https://github.com/danfq/" target="_blank">GitHub</a>
+        <div class="animation start-home"></div>
+    </nav>
+
+    <div class="container">
+        <div class="unmuted toggle-sound sound-mute">
+            <div class="sound">
+                <div class="sound--wave sound--wave_one"></div>
+                <div class="sound--wave sound--wave_two"></div>
+                <div class="sound--wave sound--wave_three"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<footer>
+
+    <p>DanFQ |
+        <script>
+            document.write(new Date().getFullYear())
+        </script>
+    </p>
+
+</footer>
+
+<!-- Audio -->
+<script src="js/audio.js"></script>
 
 </html>
