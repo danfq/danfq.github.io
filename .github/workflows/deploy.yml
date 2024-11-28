@@ -1,0 +1,39 @@
+name: Deploy Portfolio to GitHub Pages
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # Checkout Repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Setup Flutter
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: stable
+
+    # Install Dependencies
+    - name: Install dependencies
+      run: flutter pub get
+
+    # Build Flutter Web
+    - name: Build Flutter Web
+      run: flutter build web
+
+    # Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: build/web
+        publish_branch: main
+
