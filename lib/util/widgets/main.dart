@@ -14,9 +14,9 @@ class MainWidgets {
     VoidCallback? onBack,
     List<Widget>? actions,
   }) {
-    //Default Leading
+    //Default Leading - Modified to Go to Home Page
     final defaultLeading = IconButton(
-      onPressed: onBack ?? () => Navigator.pop(Get.context!),
+      onPressed: onBack ?? () => Get.offAllNamed("/"),
       icon: const Icon(Ionicons.ios_chevron_back),
     );
 
