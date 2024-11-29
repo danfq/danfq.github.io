@@ -83,12 +83,14 @@ class Buttons {
   static IconButton iconFilled({
     required IconData icon,
     required VoidCallback onTap,
+    String? tooltip,
     Color? backgroundColor,
   }) {
     return IconButton.filled(
       icon: Icon(icon, color: Theme.of(Get.context!).cardColor),
       style: IconButton.styleFrom(backgroundColor: backgroundColor),
       onPressed: onTap,
+      tooltip: tooltip,
     );
   }
 }

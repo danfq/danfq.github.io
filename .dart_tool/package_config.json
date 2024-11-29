@@ -122,8 +122,32 @@
       "languageVersion": "2.15"
     },
     {
+      "name": "github",
+      "rootUri": "file:///Users/danfq/.pub-cache/hosted/pub.dev/github-9.24.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///Users/danfq/.pub-cache/hosted/pub.dev/http-1.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///Users/danfq/.pub-cache/hosted/pub.dev/http_parser-4.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "iconsax_flutter",
       "rootUri": "file:///Users/danfq/.pub-cache/hosted/pub.dev/iconsax_flutter-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "json_annotation",
+      "rootUri": "file:///Users/danfq/.pub-cache/hosted/pub.dev/json_annotation-4.9.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -404,7 +428,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-11-29T20:04:41.328723Z",
+  "generated": "2024-11-29T20:43:00.064965Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///Users/danfq/Dev/Flutter",

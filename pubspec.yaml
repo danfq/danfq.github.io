@@ -20,6 +20,7 @@ dependencies:
   flutter_vector_icons: ^2.0.0
   toastification: ^2.3.0
   mailto: ^2.0.0
+  github: ^9.24.0
 
 dev_dependencies:
   flutter_test:
