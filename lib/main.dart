@@ -1,6 +1,7 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:portfolio/pages/portfolio.dart';
 import 'package:portfolio/util/themes/themes.dart';
 
 void main() {
@@ -13,7 +14,10 @@ void main() {
         return GetMaterialApp(
           theme: light,
           darkTheme: dark,
-          home: HomeScreen(),
+          initialRoute: "/",
+          getPages: [
+            GetPage(name: "/", page: () => const Portfolio()),
+          ],
         );
       },
     ),

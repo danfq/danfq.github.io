@@ -86,6 +86,12 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "flutter_vector_icons",
+      "rootUri": "file:///Volumes/DanFQ/Dev/PubCache/hosted/pub.dev/flutter_vector_icons-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_web_plugins",
       "rootUri": "file:///Volumes/DanFQ/Dev/Flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
@@ -338,7 +344,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-11-29T12:16:51.371029Z",
+  "generated": "2024-11-29T13:46:11.778184Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///Volumes/DanFQ/Dev/Flutter",
