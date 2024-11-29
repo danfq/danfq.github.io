@@ -36,7 +36,7 @@ class Menu extends StatelessWidget {
         Buttons.elevatedIcon(
           text: "Contacts",
           icon: Ionicons.ios_mail_outline,
-          onTap: () => Get.toNamed("/contacts"),
+          onTap: () => Get.toNamed("/contact"),
         ),
       ],
     );

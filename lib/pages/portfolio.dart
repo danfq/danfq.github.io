@@ -16,35 +16,6 @@ class Portfolio extends StatefulWidget {
 }
 
 class _PortfolioState extends State<Portfolio> {
-  ///Current Nav Index
-  int _navIndex = 0;
-
-  ///Body
-  Widget _body() {
-    //Nav Index Switch
-    switch (_navIndex) {
-      //Home
-      case 0:
-        return const Home();
-
-      //Projects
-      case 1:
-        return const Projects();
-
-      //About Me
-      case 2:
-        return const AboutMe();
-
-      //Contacts
-      case 3:
-        return const ContactMe();
-
-      //Default - None
-      default:
-        return const SizedBox.shrink();
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +41,7 @@ class _PortfolioState extends State<Portfolio> {
           ),
         ],
       ),
-      body: SafeArea(child: _body()),
+      body: const SafeArea(child: Home()),
     );
   }
 }

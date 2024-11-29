@@ -18,6 +18,8 @@ dependencies:
   adaptive_theme: ^3.6.0
   flutter_dotenv: ^5.2.1
   flutter_vector_icons: ^2.0.0
+  toastification: ^2.3.0
+  mailto: ^2.0.0
 
 dev_dependencies:
   flutter_test:

@@ -6,6 +6,7 @@ import 'package:portfolio/pages/portfolio.dart';
 import 'package:portfolio/pages/projects/projects.dart';
 import 'package:portfolio/pages/about/about.dart';
 import 'package:portfolio/util/themes/themes.dart';
+import 'package:toastification/toastification.dart';
 
 void main() {
   runApp(
@@ -14,17 +15,19 @@ void main() {
       dark: Themes.dark,
       initial: AdaptiveThemeMode.system,
       builder: (light, dark) {
-        return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: light,
-          darkTheme: dark,
-          initialRoute: "/",
-          getPages: [
-            GetPage(name: "/", page: () => const Portfolio()),
-            GetPage(name: "/projects", page: () => const Projects()),
-            GetPage(name: "/about", page: () => const AboutMe()),
-            GetPage(name: "/contact", page: () => const ContactMe()),
-          ],
+        return ToastificationWrapper(
+          child: GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: light,
+            darkTheme: dark,
+            initialRoute: "/",
+            getPages: [
+              GetPage(name: "/", page: () => const Portfolio()),
+              GetPage(name: "/projects", page: () => const Projects()),
+              GetPage(name: "/about", page: () => const AboutMe()),
+              GetPage(name: "/contact", page: () => const ContactMe()),
+            ],
+          ),
         );
       },
     ),
