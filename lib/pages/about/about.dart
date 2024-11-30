@@ -37,55 +37,61 @@ class _AboutMeState extends State<AboutMe> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MainWidgets.appBar(title: const Text("About Me")),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Row(
-          children: [
-            //Photo
-            Center(
-              child: Expanded(
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            children: [
+              //Photo
+              Expanded(
                 flex: 1,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(14.0),
-                  child: Image.asset("assets/img/me.jpg"),
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(14.0),
+                    child: Image.asset("assets/img/me.jpg"),
+                  ),
                 ),
               ),
-            ),
 
-            //Spacing
-            const SizedBox(width: 20.0),
+              //Spacing
+              const SizedBox(width: 20.0),
 
-            //Allow for Expanded Text
-            Expanded(
-              flex: 2,
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    //Text About Me
-                    Text(
-                      aboutMeText,
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
+              //Allow for Expanded
+              Expanded(
+                flex: 2,
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      //Text About Me
+                      Text(
+                        aboutMeText,
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
 
-                    //Spacing
-                    const SizedBox(height: 40.0),
+                      //Spacing
+                      const SizedBox(height: 40.0),
 
-                    //Contact Button
-                    Buttons.elevatedIcon(
-                      text: "Contact Me",
-                      icon: Ionicons.mail_outline,
-                      onTap: () {
-                        //Go to Contact Page
-                        Get.toNamed("/contact");
-                      },
-                    )
-                  ],
+                      //Contact Button
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Buttons.elevatedIcon(
+                          text: "Contact Me",
+                          icon: Ionicons.mail_outline,
+                          onTap: () {
+                            Get.toNamed("/contact");
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
