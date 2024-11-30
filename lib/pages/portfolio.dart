@@ -3,10 +3,6 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:portfolio/pages/home/home.dart';
 import 'package:portfolio/util/themes/controller.dart';
 import 'package:portfolio/util/widgets/main.dart';
-import 'package:portfolio/util/widgets/menu.dart';
-import 'package:portfolio/pages/projects/projects.dart';
-import 'package:portfolio/pages/about/about.dart';
-import 'package:portfolio/pages/contact/contact.dart';
 
 class Portfolio extends StatefulWidget {
   const Portfolio({super.key});

@@ -23,7 +23,7 @@ void main() {
             initialRoute: "/",
             getPages: [
               GetPage(name: "/", page: () => const Portfolio()),
-              GetPage(name: "/projects", page: () => const Projects()),
+              GetPage(name: "/projects", page: () => Projects()),
               GetPage(name: "/about", page: () => const AboutMe()),
               GetPage(name: "/contact", page: () => const ContactMe()),
             ],

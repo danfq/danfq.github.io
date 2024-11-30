@@ -55,29 +55,35 @@ class _AboutMeState extends State<AboutMe> {
             //Spacing
             const SizedBox(width: 20.0),
 
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                //Text About Me
-                Text(
-                  aboutMeText,
-                  style: Theme.of(context).textTheme.bodyLarge,
+            //Allow for Expanded Text
+            Expanded(
+              flex: 2,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    //Text About Me
+                    Text(
+                      aboutMeText,
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+
+                    //Spacing
+                    const SizedBox(height: 40.0),
+
+                    //Contact Button
+                    Buttons.elevatedIcon(
+                      text: "Contact Me",
+                      icon: Ionicons.mail_outline,
+                      onTap: () {
+                        //Go to Contact Page
+                        Get.toNamed("/contact");
+                      },
+                    )
+                  ],
                 ),
-
-                //Spacing
-                const SizedBox(height: 40.0),
-
-                //Contact Button
-                Buttons.elevatedIcon(
-                  text: "Contact Me",
-                  icon: Ionicons.mail_outline,
-                  onTap: () {
-                    //Go to Contact Page
-                    Get.toNamed("/contact");
-                  },
-                )
-              ],
+              ),
             ),
           ],
         ),

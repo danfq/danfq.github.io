@@ -25,7 +25,7 @@ class Menu extends StatelessWidget {
         //About Me
         Buttons.elevatedIcon(
           text: "About Me",
-          icon: Ionicons.person_outline,
+          icon: Ionicons.ios_person_outline,
           onTap: () => Get.toNamed("/about"),
         ),
 
