@@ -1,16 +1,13 @@
-# portfolio
+# My Portfolio
 
-A new Flutter project.
+## Branches
 
-## Getting Started
+This is the `dev` Branch - where the Source Code lives.
+<br>
+You can see the generated code on the [main](https://github.com/danfq/danfq.github.io/tree/main) Branch.
 
-This project is a starting point for a Flutter application.
+## The "Finished" Product
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+I used quotes because the Portfolio is never actually finished, as I'm always adding new things.
+<br>
+To access it, click [here](https://danfq.github.io).
