@@ -1,4 +1,4 @@
-My name is Dan, and I'm a 24 year old Flutter Developer.
+My name is Dan, and I'm a {{ age }} year old Flutter Developer.
 
 I'm a self-taught Developer with a passion for creating beautiful and functional mobile applications.
 I'm a quick learner and always looking for new challenges.

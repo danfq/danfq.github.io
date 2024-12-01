@@ -73,6 +73,7 @@ class Projects extends StatelessWidget {
                                       width: double.infinity,
                                       padding: const EdgeInsets.all(16.0),
                                       child: ListTile(
+                                        tileColor: Colors.transparent,
                                         title: const Text(
                                           "Creation Date",
                                           style: TextStyle(
@@ -98,6 +99,7 @@ class Projects extends StatelessWidget {
                                       width: double.infinity,
                                       padding: const EdgeInsets.all(16.0),
                                       child: ListTile(
+                                        tileColor: Colors.transparent,
                                         title: const Text(
                                           "Size",
                                           style: TextStyle(
@@ -122,6 +124,7 @@ class Projects extends StatelessWidget {
                                       width: double.infinity,
                                       padding: const EdgeInsets.all(16.0),
                                       child: ListTile(
+                                        tileColor: Colors.transparent,
                                         title: const Text(
                                           "Description",
                                           style: TextStyle(

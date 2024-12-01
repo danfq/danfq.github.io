@@ -16,6 +16,7 @@ class _PortfolioState extends State<Portfolio> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MainWidgets.appBar(
+        backgroundColor: Colors.transparent,
         centerTitle: false,
         allowBack: false,
         title: const Text("DanFQ"),

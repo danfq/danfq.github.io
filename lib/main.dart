@@ -9,6 +9,10 @@ import 'package:portfolio/util/themes/themes.dart';
 import 'package:toastification/toastification.dart';
 
 void main() {
+  //Ensure Widgets Binding is initialized
+  WidgetsFlutterBinding.ensureInitialized();
+
+  //Run App
   runApp(
     AdaptiveTheme(
       light: Themes.light,

@@ -44,25 +44,24 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       ),
     ]).animate(_controller);
 
-    //Create First Circle
+    // Initial circles with random delays
     _addCircle();
-
-    //Create Second Circle
     Future.delayed(
       Duration(milliseconds: Random().nextInt(500) + 1000),
       _addCircle,
     );
-
-    //Create Third Circle
     Future.delayed(
       Duration(milliseconds: Random().nextInt(500) + 2000),
       _addCircle,
     );
 
-    //Restart Sequence Every 4 Seconds
+    // Modified timer logic to add random delays
     timer = Timer.periodic(const Duration(seconds: 4), (timer) {
       if (circles.length < 3) {
-        _addCircle();
+        Future.delayed(
+          Duration(milliseconds: Random().nextInt(1000) + 500),
+          _addCircle,
+        );
       }
     });
   }
@@ -78,6 +77,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   ///Add Circle
   void _addCircle() {
+    if (circles.length >= 3) return; // Prevent adding more than 3 circles
+
     setState(() {
       circles.add(CircleData(
         left: random.nextDouble(),

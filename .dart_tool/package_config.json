@@ -134,6 +134,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "google_fonts",
+      "rootUri": "file:///Volumes/DanFQ/Dev/PubCache/hosted/pub.dev/google_fonts-6.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "http",
       "rootUri": "file:///Volumes/DanFQ/Dev/PubCache/hosted/pub.dev/http-1.2.2",
       "packageUri": "lib/",
@@ -210,6 +216,24 @@
       "rootUri": "file:///Volumes/DanFQ/Dev/PubCache/hosted/pub.dev/path-1.9.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "path_provider",
+      "rootUri": "file:///Volumes/DanFQ/Dev/PubCache/hosted/pub.dev/path_provider-2.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "path_provider_android",
+      "rootUri": "file:///Volumes/DanFQ/Dev/PubCache/hosted/pub.dev/path_provider_android-2.2.14",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "path_provider_foundation",
+      "rootUri": "file:///Volumes/DanFQ/Dev/PubCache/hosted/pub.dev/path_provider_foundation-2.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
     },
     {
       "name": "path_provider_linux",
@@ -434,7 +458,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-11-30T00:34:50.779576Z",
+  "generated": "2024-12-01T03:00:57.798730Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///Volumes/DanFQ/Dev/Flutter",

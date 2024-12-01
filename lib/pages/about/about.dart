@@ -33,6 +33,9 @@ class _AboutMeState extends State<AboutMe> {
     loadAboutMeText();
   }
 
+  ///Current Age
+  int currentAge = DateTime.now().year - 2000;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,7 +71,10 @@ class _AboutMeState extends State<AboutMe> {
                     children: [
                       //Text About Me
                       Text(
-                        aboutMeText,
+                        aboutMeText.replaceAll(
+                          "{{ age }}",
+                          currentAge.toString(),
+                        ),
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
 
