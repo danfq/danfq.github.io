@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
@@ -12,154 +13,164 @@ class ContactForm extends StatefulWidget {
 }
 
 class _ContactFormState extends State<ContactForm> {
+  ///Form Key
   final _formKey = GlobalKey<FormState>();
+
+  //Controllers
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _phoneController = TextEditingController();
   final _messageController = TextEditingController();
+
   @override
   void dispose() {
+    //Dispose of Controllers
     _nameController.dispose();
     _emailController.dispose();
     _phoneController.dispose();
+
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final inputDecoration = InputDecoration(
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: Colors.grey.shade400),
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: Colors.grey.shade400),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: Theme.of(context).colorScheme.secondary),
-      ),
-      errorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: Colors.red.shade200),
-      ),
-      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      hoverColor: Colors.transparent,
-      floatingLabelStyle: TextStyle(
-        color: Theme.of(context).colorScheme.secondary,
-      ),
-      labelStyle: TextStyle(
-        color: Colors.grey.shade400,
-      ),
-      errorStyle: TextStyle(
-        color: Colors.red.shade200,
-      ),
-    );
-
     return Form(
       key: _formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          TextFormField(
-            controller: _nameController,
-            decoration: inputDecoration.copyWith(
-              labelText: "Name",
-              hintText: "Enter Your Name",
-              prefixIcon: const Icon(Ionicons.ios_person_outline),
+          CupertinoFormSection.insetGrouped(
+            backgroundColor: Colors.transparent,
+            decoration: BoxDecoration(
+              color: CupertinoColors.white.withOpacity(0.1),
+              borderRadius: BorderRadius.circular(8),
             ),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return "Please Enter Your Name";
-              }
-              return null;
-            },
-          ),
-          const SizedBox(height: 16),
-          TextFormField(
-            controller: _emailController,
-            decoration: inputDecoration.copyWith(
-              labelText: "E-mail",
-              hintText: "Enter Your E-mail Address",
-              prefixIcon: const Icon(Ionicons.ios_mail_outline),
-            ),
-            keyboardType: TextInputType.emailAddress,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return "Please Enter Your E-mail Address";
-              }
-              if (!RegExp(r"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")
-                  .hasMatch(value)) {
-                return "Please Enter a Valid E-mail Address";
-              }
-              return null;
-            },
-          ),
-
-          //Spacing
-          const SizedBox(height: 16),
-
-          //Phone
-          TextFormField(
-            controller: _phoneController,
-            decoration: inputDecoration.copyWith(
-              labelText: "Phone (optional)",
-              hintText: "Enter Your Phone Number",
-              prefixIcon: const Icon(Ionicons.ios_phone_portrait_outline),
-            ),
-            keyboardType: TextInputType.phone,
-            inputFormatters: [
-              FilteringTextInputFormatter.digitsOnly,
+            margin: EdgeInsets.zero,
+            children: [
+              CupertinoTextFormFieldRow(
+                style: const TextStyle(color: CupertinoColors.label),
+                placeholderStyle: const TextStyle(
+                  color: CupertinoColors.systemGrey,
+                ),
+                controller: _nameController,
+                prefix: const Icon(
+                  Ionicons.ios_person_outline,
+                  color: CupertinoColors.systemGrey,
+                ),
+                placeholder: "Enter Your Name",
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 8,
+                  vertical: 12,
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Please Enter Your Name";
+                  }
+                  return null;
+                },
+              ),
+              CupertinoTextFormFieldRow(
+                style: const TextStyle(color: CupertinoColors.label),
+                placeholderStyle: const TextStyle(
+                  color: CupertinoColors.systemGrey,
+                ),
+                controller: _emailController,
+                prefix: const Icon(
+                  Ionicons.ios_mail_outline,
+                  color: CupertinoColors.systemGrey,
+                ),
+                placeholder: "Enter Your E-mail Address",
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 8,
+                  vertical: 12,
+                ),
+                keyboardType: TextInputType.emailAddress,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Please Enter Your E-mail Address";
+                  }
+                  if (!RegExp(r"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")
+                      .hasMatch(value)) {
+                    return "Please Enter a Valid E-mail Address";
+                  }
+                  return null;
+                },
+              ),
+              CupertinoTextFormFieldRow(
+                style: const TextStyle(color: CupertinoColors.label),
+                placeholderStyle: const TextStyle(
+                  color: CupertinoColors.systemGrey,
+                ),
+                controller: _phoneController,
+                prefix: const Icon(
+                  Ionicons.ios_phone_portrait_outline,
+                  color: CupertinoColors.systemGrey,
+                ),
+                placeholder: "Enter Your Phone Number (optional)",
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 8,
+                  vertical: 12,
+                ),
+                keyboardType: TextInputType.phone,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+              ),
             ],
           ),
 
           //Spacing
           const SizedBox(height: 16),
 
-          //Phone
-          TextFormField(
-            controller: _messageController,
-            decoration: inputDecoration.copyWith(
-              labelText: "Message",
-              hintText: "Enter Your Message",
-              prefixIcon: const Icon(Ionicons.ios_text_outline),
+          //Message Field
+          CupertinoFormSection.insetGrouped(
+            backgroundColor: Colors.transparent,
+            decoration: BoxDecoration(
+              color: CupertinoColors.white.withOpacity(0.1),
+              borderRadius: BorderRadius.circular(8),
             ),
-            keyboardType: TextInputType.multiline,
-            maxLines: 4,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return "Please Enter Your Message";
-              }
-              return null;
-            },
+            margin: EdgeInsets.zero,
+            children: [
+              CupertinoTextFormFieldRow(
+                style: const TextStyle(color: CupertinoColors.label),
+                placeholderStyle: const TextStyle(
+                  color: CupertinoColors.systemGrey,
+                ),
+                controller: _messageController,
+                prefix: const Icon(
+                  Ionicons.ios_chatbubble_outline,
+                  color: CupertinoColors.systemGrey,
+                ),
+                placeholder: "Enter Your Message",
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 8,
+                  vertical: 12,
+                ),
+                keyboardType: TextInputType.multiline,
+                maxLines: 4,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Please Enter Your Message";
+                  }
+                  return null;
+                },
+              ),
+            ],
           ),
 
           //Spacing
           const SizedBox(height: 24),
 
           //Submit Button
-          Buttons.elevatedIcon(
-            text: "Submit",
-            icon: Ionicons.ios_send_outline,
-            onTap: () async {
+          CupertinoButton.filled(
+            onPressed: () async {
               if (_formKey.currentState!.validate()) {
-                //Name
+                //Inputs
                 final name = _nameController.text.trim();
-
-                //Email
                 final email = _emailController.text.trim();
-
-                //Phone
                 final phone = _phoneController.text.trim();
-
-                //Message
                 final message = _messageController.text.trim();
 
-                //Check Name & E-mail
-                if (name.isEmpty || email.isEmpty || message.isEmpty) {
-                  return;
-                }
+                //Validate Inputs
+                if (name.isEmpty || email.isEmpty || message.isEmpty) return;
 
                 //Send Contact Form
                 await ContactAPI.sendContactForm(
@@ -170,6 +181,14 @@ class _ContactFormState extends State<ContactForm> {
                 );
               }
             },
+            child: const Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Ionicons.ios_send_outline),
+                SizedBox(width: 8),
+                Text("Submit"),
+              ],
+            ),
           ),
         ],
       ),
