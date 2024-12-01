@@ -24,6 +24,7 @@ dependencies:
   clipboard: ^0.1.3
   google_fonts: ^6.2.1
   fl_country_code_picker: ^0.1.9+1
+  download: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -43,3 +44,6 @@ flutter:
 
     # Images
     - assets/img/
+
+    # Documents
+    - assets/doc/

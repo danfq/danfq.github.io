@@ -1,4 +1,6 @@
+import 'package:download/download.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:get/route_manager.dart';
 import 'package:portfolio/util/widgets/buttons.dart';
@@ -81,15 +83,53 @@ class _AboutMeState extends State<AboutMe> {
                       //Spacing
                       const SizedBox(height: 40.0),
 
-                      //Contact Button
+                      //Contact & CV Buttons
                       Align(
                         alignment: Alignment.centerLeft,
-                        child: Buttons.elevatedIcon(
-                          text: "Contact Me",
-                          icon: Ionicons.mail_outline,
-                          onTap: () {
-                            Get.toNamed("/contact");
-                          },
+                        child: Row(
+                          children: [
+                            //Contact Button
+                            Buttons.elevatedIcon(
+                              text: "Contact Me",
+                              icon: Ionicons.mail_outline,
+                              onTap: () {
+                                Get.toNamed("/contact");
+                              },
+                            ),
+
+                            //Spacing
+                            const SizedBox(width: 10),
+
+                            //Download CV Button
+                            Buttons.elevatedIcon(
+                              text: "Download CV",
+                              icon: Ionicons.document_outline,
+                              onTap: () async {
+                                //Current Date
+                                final now = DateTime.now();
+                                final day = now.day;
+                                final month = now.month;
+                                final year = now.year;
+
+                                //Load CV from Assets
+                                final cvData = await rootBundle.load(
+                                  "assets/doc/CV_01_12_2024.pdf",
+                                );
+
+                                //Get Bytes
+                                final bytes = cvData.buffer.asUint8List();
+
+                                //Create Stream
+                                final stream = Stream.fromIterable(bytes);
+
+                                //Download CV
+                                download(
+                                  stream,
+                                  "DanFQ_CV_${day}_${month}_$year.pdf",
+                                );
+                              },
+                            ),
+                          ],
                         ),
                       ),
                     ],
