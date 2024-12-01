@@ -86,6 +86,12 @@
       "languageVersion": "3.1"
     },
     {
+      "name": "fl_country_code_picker",
+      "rootUri": "file:///Users/danfq/.pub-cache/hosted/pub.dev/fl_country_code_picker-0.1.9+1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///Users/danfq/Dev/Flutter/packages/flutter",
       "packageUri": "lib/",
@@ -102,6 +108,12 @@
       "rootUri": "file:///Users/danfq/.pub-cache/hosted/pub.dev/flutter_lints-4.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.1"
+    },
+    {
+      "name": "flutter_localizations",
+      "rootUri": "file:///Users/danfq/Dev/Flutter/packages/flutter_localizations",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
     },
     {
       "name": "flutter_test",
@@ -154,6 +166,12 @@
     {
       "name": "iconsax_flutter",
       "rootUri": "file:///Users/danfq/.pub-cache/hosted/pub.dev/iconsax_flutter-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///Users/danfq/.pub-cache/hosted/pub.dev/intl-0.19.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -270,6 +288,12 @@
       "rootUri": "file:///Users/danfq/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.8",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "scrollable_positioned_list",
+      "rootUri": "file:///Users/danfq/.pub-cache/hosted/pub.dev/scrollable_positioned_list-0.3.8",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
     },
     {
       "name": "shared_preferences",
@@ -458,7 +482,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-12-01T04:16:24.991103Z",
+  "generated": "2024-12-01T04:42:20.018759Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///Users/danfq/Dev/Flutter",

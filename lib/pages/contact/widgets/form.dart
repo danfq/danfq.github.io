@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:portfolio/util/contact/api.dart';
 import 'package:portfolio/util/widgets/buttons.dart';
+import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 
 class ContactForm extends StatefulWidget {
   const ContactForm({super.key});
@@ -21,6 +22,22 @@ class _ContactFormState extends State<ContactForm> {
   final _emailController = TextEditingController();
   final _phoneController = TextEditingController();
   final _messageController = TextEditingController();
+
+  //Country Code Picker
+  final countryPicker = const FlCountryCodePicker();
+  CountryCode? countryCode;
+
+  @override
+  void initState() {
+    super.initState();
+
+    //Set Default Country Code
+    countryCode = const CountryCode(
+      name: "Portugal",
+      code: "PT",
+      dialCode: "+351",
+    );
+  }
 
   @override
   void dispose() {
@@ -102,9 +119,41 @@ class _ContactFormState extends State<ContactForm> {
                   color: CupertinoColors.systemGrey,
                 ),
                 controller: _phoneController,
-                prefix: const Icon(
-                  Ionicons.ios_phone_portrait_outline,
-                  color: CupertinoColors.systemGrey,
+                prefix: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(
+                      Ionicons.ios_phone_portrait_outline,
+                      color: CupertinoColors.systemGrey,
+                    ),
+                    const SizedBox(width: 8),
+                    GestureDetector(
+                      onTap: () async {
+                        //Show Country Code Picker
+                        final code = await countryPicker.showPicker(
+                          backgroundColor: Theme.of(context).cardColor,
+                          context: context,
+                        );
+
+                        //Set Country Code
+                        if (code != null) {
+                          setState(() => countryCode = code);
+                        }
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: CupertinoColors.white.withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        child: Text(
+                          countryCode?.dialCode ?? '+1',
+                          style: const TextStyle(color: CupertinoColors.label),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 placeholder: "Enter Your Phone Number (optional)",
                 padding: const EdgeInsets.symmetric(
@@ -166,7 +215,9 @@ class _ContactFormState extends State<ContactForm> {
                 //Inputs
                 final name = _nameController.text.trim();
                 final email = _emailController.text.trim();
-                final phone = _phoneController.text.trim();
+                final phone = _phoneController.text.isEmpty
+                    ? ''
+                    : '${countryCode?.dialCode ?? '+1'}${_phoneController.text.trim()}';
                 final message = _messageController.text.trim();
 
                 //Validate Inputs
