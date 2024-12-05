@@ -131,34 +131,37 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     height: circle.size,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color:
-                          const Color(0xFFE91E63).withOpacity(circle.opacity),
+                      color: const Color(0xFFE91E63).withOpacity(
+                        circle.opacity,
+                      ),
                     ),
                   ),
                 ),
               )),
 
-          // Existing text column
-          const Positioned(
-            right: 100,
+          // Modified text and menu positioning
+          Positioned(
+            right: MediaQuery.of(context).size.width > 600 ? 100 : null,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: MediaQuery.of(context).size.width > 600
+                  ? CrossAxisAlignment.end
+                  : CrossAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   "Hi! I'm Dan!",
                   style: TextStyle(
                     fontSize: 34,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 20),
-                Text(
+                const SizedBox(height: 20),
+                const Text(
                   "I'm a Flutter Developer.",
                   style: TextStyle(fontSize: 20),
                 ),
-                SizedBox(height: 40),
-                Menu(),
+                const SizedBox(height: 40),
+                Menu(isMobile: MediaQuery.of(context).size.width <= 600),
               ],
             ),
           ),
